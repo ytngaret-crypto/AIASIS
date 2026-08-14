@@ -1,0 +1,33 @@
+# Environment / secrets
+.env
+
+# Telegram session
+*.session
+*.session-journal
+*.session-shm
+*.session-wal
+
+# SQLite database
+*.sqlite
+*.sqlite3
+*.db
+data/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
