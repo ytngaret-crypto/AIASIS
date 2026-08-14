@@ -88,7 +88,7 @@ def register_ai(client):
         if not event.is_private:
             return
         text=(event.raw_text or "").strip()
-        if not text or text.startswith(".") or not event.is_reply:
+        if not text or not event.is_reply:
             return
         me=await client.get_me()
         r=await event.get_reply_message()
