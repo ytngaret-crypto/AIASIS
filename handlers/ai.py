@@ -35,8 +35,8 @@ async def handle_reply(client,event,uid):
     me=await client.get_me()
     if r.sender_id != me.id:
         return False
-    if not is_ai_message(event.chat_id,r.id,uid):
-        return False
+    if not is_ai_message(event.chat_id, r.id):
+    return False
     if event.is_group:
         if not await can_group(client,event,uid):
             return True
@@ -98,6 +98,6 @@ def register_ai(client):
             return
         # For outgoing self-chat replies, the owner is the conversation user.
         uid=me.id
-        if not is_ai_message(event.chat_id,r.id,uid):
+        if not is_ai_message(event.chat_id, r.id):
             return
         await generate(client,event,uid,text)
