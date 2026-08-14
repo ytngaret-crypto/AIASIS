@@ -155,7 +155,9 @@ def save_ai_message(chat_id,user_id,message_id):
     with LOCK,connect() as c:
         c.execute("INSERT OR REPLACE INTO ai_messages VALUES(?,?,?,?)",(chat_id,user_id,message_id,now()))
 
-def is_ai_message(chat_id,message_id,user_id):
+def is_ai_message(chat_id, message_id):
     with connect() as c:
-        return bool(c.execute("SELECT 1 FROM ai_messages WHERE chat_id=? AND message_id=? AND user_id=?",
-                              (chat_id,message_id,user_id)).fetchone())
+        return bool(c.execute(
+            "SELECT 1 FROM ai_messages WHERE chat_id=? AND message_id=?",
+            (chat_id, message_id)
+        ).fetchone())
