@@ -26,12 +26,22 @@ def register_commands(client,login_id):
                 if group_ai_enabled(event.chat_id,uid):
                     await event.respond("⚠️ Asisten AI kamu sudah menyala."); return
                 set_group_ai(event.chat_id,uid,True)
-                await event.respond("🤖 Asisten AI telah menyala. Reply pesan AI, mention AI, atau gunakan .pai.")
+                await event.respond("👋 Halo, salam kenal. Saya Setyaa — Asisten AI Anda.
+
+🤖 Saya hadir untuk membantu menjawab pertanyaan, memberikan informasi, serta menemani berbagai kebutuhan Anda.
+
+💬 Silakan mulai percakapan. Saya siap membantu kapan saja.")
             else:
                 if private_chat_enabled(event.chat_id):
                     await event.respond("⚠️ Asisten AI kamu sudah menyala."); return
                 set_private_chat(event.chat_id,True)
-                await event.respond("🤖 Asisten AI telah menyala. Sekarang kamu bisa chat seperti biasa. Reply pesan AI agar aku merespons.")
+                await event.respond("👋 Halo, salam kenal!
+Saya Setya, Asisten AI yang siap menemani Anda berbicara, bertukar pikiran, atau sekadar menjadi teman cerita.
+
+✨ Silakan sampaikan apa pun yang ingin Anda ceritakan. Saya siap mendengarkan.
+
+❗ This account is now registered as a user of Setya AI Bot.
+📩 To contact the owner, please reach out to @padukaanse")
             return
 
         if cmd==".offbot":
